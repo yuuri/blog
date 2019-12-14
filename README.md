@@ -1,2 +1,2 @@
-# todo_list
-a note for todo list
+# blog
+Record my think...
