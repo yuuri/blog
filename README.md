@@ -43,3 +43,15 @@ https://wiki.python.org/moin/PythonDecoratorLibrary (装饰器)
 
 https://learnku.com/docs/python-guide/2018 (Python 最佳实践2018)
 
+
+
+
+
+
+
+----Go example ----
+
+1.匿名函数与闭包
+
+https://segmentfault.com/a/1190000018689134
+
