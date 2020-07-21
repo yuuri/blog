@@ -32,6 +32,8 @@ https://draveness.me/golang/ (Go语言设计与实现)
 
 https://colobu.com/ （https://github.com/smallnest）
 
+https://liweinlp.com/ (nlp)
+
 
 
 https://talk.swift.gg/
