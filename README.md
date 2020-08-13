@@ -13,7 +13,7 @@ Record my think...
 
 202007/20200707.md [《安装Systemtap 》](202007/20200707.md)
 
-
+202007/20200714.md [《TexLive 使用 》](202007/20200714.md)
 
 
 Some Study Blog 
