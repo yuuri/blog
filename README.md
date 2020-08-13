@@ -32,6 +32,8 @@ https://draveness.me/golang/ (Go语言设计与实现)
 
 https://colobu.com/ （https://github.com/smallnest）
 
+https://liweinlp.com/ (nlp)
+
 
 
 https://talk.swift.gg/
@@ -83,5 +85,11 @@ https://jasonbian.gitbooks.io/elasticsearch/content/index.html (elasticsearch In
 ------- Git  -------
 
 https://juejin.im/post/5ce6519fe51d454fbf54095b (GitLab 数据备份)
+
+------- Database  -------
+
+
+https://blog.jcole.us/innodb/ (InnoDB)
+
 
 
