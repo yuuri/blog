@@ -15,6 +15,8 @@ Record my think...
 
 202007/20200714.md [《TexLive 使用 》](202007/20200714.md)
 
+202008/20200820 [《Python 时间格式化符号》](202008/20200820.md) 
+
 
 Some Study Blog 
 
