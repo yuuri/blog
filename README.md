@@ -92,6 +92,8 @@ https://cloud.tencent.com/developer/doc/1096 (git 命令)
 
 https://fed.taobao.org/blog/taofed/do71ct/how-to-display-git-diff/ (如何实现一个 Git Diff 解析器)
 
+https://stackoverflow.com/questions/29469649/create-a-commit-using-pygit2 (使用pygit2 创建一个commit)
+
 ------- Database  -------
 
 
