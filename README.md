@@ -99,5 +99,10 @@ https://stackoverflow.com/questions/29469649/create-a-commit-using-pygit2 (使�
 
 https://blog.jcole.us/innodb/ (InnoDB)
 
+---------------------------------------
+
+https://blog.spoock.com/2019/12/02/read-linux-kernel-by-woboq/  (使用woboq codebrowser阅读Linux源代码)
+
+
 
 
