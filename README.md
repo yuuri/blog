@@ -17,6 +17,8 @@ Record my think...
 
 202008/20200820 [《Python 时间格式化符号》](202008/20200820.md) 
 
+202008/20200820 [《Git 清除不必要的文件》](202008/20200820-2.md)
+
 
 Some Study Blog 
 
@@ -93,6 +95,8 @@ https://cloud.tencent.com/developer/doc/1096 (git 命令)
 https://fed.taobao.org/blog/taofed/do71ct/how-to-display-git-diff/ (如何实现一个 Git Diff 解析器)
 
 https://stackoverflow.com/questions/29469649/create-a-commit-using-pygit2 (使用pygit2 创建一个commit)
+
+https://www.jianshu.com/p/ced088550235 (git 云服务相关知识及历史)
 
 ------- Database  -------
 
