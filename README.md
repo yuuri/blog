@@ -19,6 +19,11 @@ Record my think...
 
 202008/20200820 [《Git 清除不必要的文件》](202008/20200820-2.md)
 
+202008/20200827 [《Golang channel 与waitgroup 使用》](202008/20200827.md)
+
+
+
+
 
 Some Study Blog 
 
