@@ -119,3 +119,13 @@ https://blog.spoock.com/2019/12/02/read-linux-kernel-by-woboq/  (使用woboq cod
 
 
 
+
+---- Windows 重装为Linux
+
+[1].https://blog.ilemonrain.com/linux/win32-loader-windows-to-linux-tutorial.html
+
+[2].https://www.hostloc.com/search.php?mod=forum&searchid=2567&orderby=lastpost&ascdesc=desc&searchsubmit=yes&kw=windows+linux
+
+
+
+
