@@ -67,11 +67,15 @@ https://godbolt.org/ (在线编译代码)
 
 -----------Python-------------
 
-https://wiki.python.org/moin/PythonDecoratorLibrary (装饰器)
+[1].https://wiki.python.org/moin/PythonDecoratorLibrary (装饰器)
 
-https://learnku.com/docs/python-guide/2018 (Python 最佳实践2018)
+[2].https://learnku.com/docs/python-guide/2018 (Python 最佳实践2018)
 
+[3].https://leanpub.com/insidethepythonvirtualmachine/read (**Inside The Python Virtual Machine**)
 
+[4].https://realpython.com/products/cpython-internals-book/ (《CPython Internals 》，基于 Python 3.9 的源码、底层分析)
+
+[5].https://github.com/zpoint/CPython-Internals/blob/master/README_CN.md (Cpython Internals)
 
 
 
