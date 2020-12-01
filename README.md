@@ -33,7 +33,7 @@ Record my think...
 
 Some Study Blog 
 
-------Go---------------s
+------Go---------------
 
 https://xargin.com/
 
@@ -112,6 +112,8 @@ https://fed.taobao.org/blog/taofed/do71ct/how-to-display-git-diff/ (如何实现
 https://stackoverflow.com/questions/29469649/create-a-commit-using-pygit2 (使用pygit2 创建一个commit)
 
 https://www.jianshu.com/p/ced088550235 (git 云服务相关知识及历史)
+
+http://schacon.github.io/git/user-manual.html#birdview-on-the-source-code (git 代码阅读)
 
 
 
