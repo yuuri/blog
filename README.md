@@ -141,3 +141,23 @@ https://blog.spoock.com/2019/12/02/read-linux-kernel-by-woboq/  (使用woboq cod
 
 
 
+
+----- 现代操作系统:原理与实现(陈海波，夏虞斌)
+
+[1].https://ipads.se.sjtu.edu.cn/mospi/ （在线book 地址）
+
+[2].https://ipads.se.sjtu.edu.cn/courses/os/ (Courses:Operating Systems)
+
+[3].https://ipads.se.sjtu.edu.cn/ (IPADS)
+
+
+
+
+
+----- javascript
+
+https://justjavac.com/ ()
+
+
+
+
