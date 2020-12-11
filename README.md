@@ -27,7 +27,7 @@ Record my think...
 
 202011/20201104  [《MySQL一张表中一条数据拆分为多条数据》](202011/20201104.md)
 
-
+2020112/20201211  [《系统虚拟化》](202012/20201211.md)
 
 
 
@@ -76,6 +76,8 @@ https://godbolt.org/ (在线编译代码)
 [4].https://realpython.com/products/cpython-internals-book/ (《CPython Internals 》，基于 Python 3.9 的源码、底层分析)
 
 [5].https://github.com/zpoint/CPython-Internals/blob/master/README_CN.md (Cpython Internals)
+
+[6].https://my.oschina.net/yangyanxing/blog/296052  (异步多进程中使用队列)   https://gist.github.com/yuuri/544fc947a84bb6245e03d482a91ad59a
 
 
 
