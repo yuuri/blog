@@ -121,6 +121,14 @@ https://jasonbian.gitbooks.io/elasticsearch/content/index.html (elasticsearch In
 
 ------- Git  -------
 
+https://my.oschina.net/GIIoOS/blog/3224654 (一种 Git 存储库的一致性比较方案)
+
+https://github.com/fcharlie/fcharlie.github.io/blob/master/_posts/2021/2021-01-20-GitGuideForCodeHostingPractitioners.md (代码托管从业者 Git 指南)
+
+https://github.com/fcharlie/fcharlie.github.io/blob/master/_posts/2020/2020-08-16-ExploreSomeIssuesWithGit.md (探讨 Git 版本控制系统的若干问题 - 2020 版)
+
+https://github.com/fcharlie/fcharlie.github.io/blob/master/_posts/2020/2020-12-25-performance-scalability-and-high-availability-for-git.md (性能，可扩展性和高可用 - 大型 Git 代码托管平台的关键问题) 
+
 https://juejin.im/post/5ce6519fe51d454fbf54095b (GitLab 数据备份)
 
 https://cloud.tencent.com/developer/doc/1096 (git 命令)
