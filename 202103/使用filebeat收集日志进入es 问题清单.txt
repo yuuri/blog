@@ -24,6 +24,10 @@ At least once 的上报，但并不保证 Exactly once, 因此一条数据可能
 当前python环境使用concurrent-log-handler包，这个包使用portalocker 来进行加锁操作，
 clh 包会自动创建.lock 文件,在写入文件后会释放锁。在获取锁时会尝试获取锁10次，如果没有获得报错。获得锁后会一个excluesive_lock。
 
+8.filebeat 持续运行，index名称会改变吗？
+-- 待验证
+
+
 
 filebeat 性能调优
 1.每个日志生产环境生产的日志大小,爆发量都不一样, 要根据自己的日志特点设定合适的event值;什么叫合适,至少能避免内存>200MB的灾难;
