@@ -24,15 +24,10 @@ At least once 的上报，但并不保证 Exactly once, 因此一条数据可能
 当前python环境使用concurrent-log-handler包，这个包使用portalocker 来进行加锁操作，
 clh 包会自动创建.lock 文件,在写入文件后会释放锁。在获取锁时会尝试获取锁10次，如果没有获得报错。获得锁后会一个excluesive_lock。
 
-<<<<<<< HEAD
+
 8.filebeat 持续运行，配置es index名称为日期格式，会自动改变吗？(即昨天收集的日志 index是昨天，今天收集的日志index是今天)
 如果有新数据，会自动生成新的index,index 会包含当天的日志(如果在index 中配置了使用日期格式)
 
-
-=======
-8.filebeat 持续运行，index名称会改变吗？
--- 待验证
->>>>>>> 8e9148c19b87644fa1f31526881dfb791b70e9e0
 
 
 
