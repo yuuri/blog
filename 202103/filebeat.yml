@@ -22,6 +22,7 @@ filebeat.inputs:
     - D:\frp\winsw.*.log
   fields:
      type: frp
+     ip: "{{.ip}}"
   # 匹配规则
   multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}|^[0-9]{4}/[0-9]{2}/[0-9]{2}'
   # 匹配规则取反
@@ -29,6 +30,11 @@ filebeat.inputs:
   # 多行文件合并顺序，合并后面的
   multiline.match: after
   multiline.timeout: 2s                         # 超时时间后,即使还未匹配到下一个行日志(下一个多行事件)，也将此次匹配的事件刷出 (默认5s)
+  processors:
+  - dissect:
+      tokenizer: "%{date} %{time} {%level} "
+      field: "message"
+      target_prefix: "dissect"
 
 - type: log
   enabled: true
@@ -42,6 +48,8 @@ filebeat.inputs:
   multiline.negate: true
   multiline.match: after
   multiline.timeout: 2s                         # 超时时间后,即使还未匹配到下一个行日志(下一个多行事件)，也将此次匹配的事件刷出 (默认5s)
+
+
 
 
 
