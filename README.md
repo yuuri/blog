@@ -141,6 +141,10 @@ https://www.jianshu.com/p/ced088550235 (git 云服务相关知识及历史)
 
 http://schacon.github.io/git/user-manual.html#birdview-on-the-source-code (git 代码阅读)
 
+https://docs.gitlab.com/ce/administration/server_hooks.html  （gitlab 关于pre-receive hooks 的说明）
+
+https://github.com/github/platform-samples/blob/master/pre-receive-hooks/README.md （GitHub 提供的pre-revceive hook样例 ）
+
 
 
 https://my.oschina.net/GIIoOS （Gitee 实现相关知识）
