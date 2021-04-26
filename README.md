@@ -199,7 +199,9 @@ https://justjavac.com/ ()
 
 
 
+----- big data
 
+https://mattturck.com/bigdata2018/ (Great Power, Great Responsibility: The 2018 Big Data & AI Landscape)
 
 
 
