@@ -205,5 +205,11 @@ https://mattturck.com/bigdata2018/ (Great Power, Great Responsibility: The 2018 
 
 
 
+--- cloud 
+
+https://mikechengwei.github.io/2020/06/03/cgroup%E5%8E%9F%E7%90%86/ (Linux Cgroups原理)
+
+
+
 
 
