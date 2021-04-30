@@ -109,6 +109,11 @@ https://rocksdb.org.cn/doc.html (RocksDB)
 
 https://bohutang.me/  (ClickHouse)
 
+---- linux 
+http://www2.rdrop.com/~paulmck/ 
+(Is Parallel Programming Hard, And If So, What Can You Do About It?)
+(中文译名 深入理解并行编程)
+
 
 
 ------- Algorithms -------
