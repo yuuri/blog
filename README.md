@@ -120,6 +120,10 @@ http://www2.rdrop.com/~paulmck/
 
 https://www.gitbook.com/book/wizardforcel/the-art-of-programming-by-july  (准备面试中的算法)
 
+https://xlinux.nist.gov/dads/ Dictionary of Algorithms and Data Structures
+
+
+
 ------- Elasticsearch  -------
 
 https://jasonbian.gitbooks.io/elasticsearch/content/index.html (elasticsearch Introduction)
