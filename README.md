@@ -160,6 +160,10 @@ https://github.com/github/platform-samples/blob/master/pre-receive-hooks/README.
 
 
 
+https://www.kenneth-truyers.net/2016/10/13/git-nosql-database/amp/ (git融合了数据库的很多思想，从数据库角度演绎git原理 <Git as a NoSql database> )
+
+
+
 https://my.oschina.net/GIIoOS （Gitee 实现相关知识）
 
 ------- Database  -------
