@@ -7,6 +7,8 @@ Record my think...
 
 202001/20200113.md [《Git 常用命令》](202001/20200113.md)
 
+202105/20210519.md [《commit 的sha值是如何计算的》](202105/20210519.md)
+
 202005/20200528.md [《Pytest 使用》](202005/20200528.md)
 
 202005/20200528-2.md [《Git diff 是如何实现的》](202005/20200528-2.md)
@@ -39,7 +41,9 @@ Record my think...
 
 202103/20210329  [Filebeat配置多行日志](202103/20210329.md)
 
+202105/20210520  [一致性hash算法](202105/20210520.md)
 
+202105/20210520-2  [Gossip 协议](202105/20210520-2.md)
 
 
 
@@ -120,6 +124,10 @@ http://www2.rdrop.com/~paulmck/
 
 https://www.gitbook.com/book/wizardforcel/the-art-of-programming-by-july  (准备面试中的算法)
 
+https://xlinux.nist.gov/dads/ Dictionary of Algorithms and Data Structures
+
+
+
 ------- Elasticsearch  -------
 
 https://jasonbian.gitbooks.io/elasticsearch/content/index.html (elasticsearch Introduction)
@@ -149,6 +157,10 @@ http://schacon.github.io/git/user-manual.html#birdview-on-the-source-code (git �
 https://docs.gitlab.com/ce/administration/server_hooks.html  （gitlab 关于pre-receive hooks 的说明）
 
 https://github.com/github/platform-samples/blob/master/pre-receive-hooks/README.md （GitHub 提供的pre-revceive hook样例 ）
+
+
+
+https://www.kenneth-truyers.net/2016/10/13/git-nosql-database/amp/ (git融合了数据库的很多思想，从数据库角度演绎git原理 <Git as a NoSql database> )
 
 
 
