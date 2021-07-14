@@ -59,6 +59,10 @@ Record my think...
 
 Some Study Blog 
 
+https://brooker.co.za/blog/2020/01/02/why-distributed.html  [Marc Brooker
+
+Why do we need distributed  systems?]
+
 ------Go---------------
 
 https://xargin.com/
