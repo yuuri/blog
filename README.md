@@ -230,6 +230,10 @@ https://mattturck.com/bigdata2018/ (Great Power, Great Responsibility: The 2018 
 
 
 
+[http://oilshell.org/blog/2021/07/blog-backlog-2.html](http://www.oilshell.org/blog/2021/07/blog-backlog-2.html)  Kubernetes is Our Generation's Multics 
+
+
+
 --- cloud 
 
 https://mikechengwei.github.io/2020/06/03/cgroup%E5%8E%9F%E7%90%86/ (Linux Cgroups原理)
