@@ -59,6 +59,10 @@ Record my think...
 
 Some Study Blog 
 
+https://brooker.co.za/blog/2020/01/02/why-distributed.html  [Marc Brooker
+
+Why do we need distributed  systems?]
+
 ------Go---------------
 
 https://xargin.com/
@@ -169,6 +173,10 @@ https://github.com/github/platform-samples/blob/master/pre-receive-hooks/README.
 
 
 https://www.kenneth-truyers.net/2016/10/13/git-nosql-database/amp/ (git融合了数据库的很多思想，从数据库角度演绎git原理 <Git as a NoSql database> )
+
+
+
+http://ftxtool.org/category/libgit2/ (libgit2使用教程)
 
 
 
