@@ -1,5 +1,7 @@
 ### Kubernetes 
 
+[TOC]
+
 
 
 #### 1.云原生概念
@@ -38,9 +40,9 @@ Pod 实现机制:
 
 
 
+#### 5. 应用与编排-核心原理
 
-
-#### 5.Kubernetes 资源对象
+**Kubernetes 资源对象**
 
 - Spec
 - Status
@@ -93,11 +95,130 @@ Pod 实现机制:
 
   - Kubernetes 的控制器和资源都是可以自定义的,可以方便的扩展控制器模式.特别对于有状态应用,我们往往通过自定义资源和控制器的方式来自动化运维操作.
 
-    
 
 
 
+#### 6.编排与管理-Deployment
 
+- Deployment: 管理部署发布的控制器
+
+
+
+查看Deployment 状态
+
+```
+kubectl get deployment
+```
+
+
+
+- Deployment 只负责管理不同版本的ReplicaSet,由ReplicaSet 管理Pod副本数
+
+- 每个ReplicaSet 对应了一个Deployment template 的一个版本
+- 一个ReplicaSet 下面的Pod 都是相同版本
+
+**Deployment 控制器**
+
+**ReplicaSet 控制器**
+
+
+
+#### 7.编排与管理-Job与DaemonSet
+
+- Job 管理任务的控制器
+
+  新的参数:
+
+  - restartPolicy 重启策略
+  - backoffLimit 重试次数
+
+**查看Job 状态**
+
+```
+kubectl get jobs
+```
+
+- 并行运行job
+
+  spec中新增如下参数:
+
+  - completions:代表pod 执行的次数
+  - parallelism:代表并行执行的pod 个数
+
+- CronJob
+
+  - schedule: crontab 格式相同
+  - startingDeadlineSeconds: 最长执行时间
+  - concurrencyPolicy: 是否允许并行
+  - successfulJobHistoryLimit:运行留存历史Job 个数
+
+**Job-管理模式**
+
+- Job Controller 负责根据配置创建pod
+- Job Controller 跟踪Job 状态,根据配置及时重试或者创建pod
+- Job Controller 会自动添加label 跟踪pod,并根据配置并行或者串行创建pod
+
+**Job 控制器**
+
+
+
+**DaemonSet:守护进程控制器**
+
+- 保证集群内每一个(或一些)节点都运行一组相同的 Pod
+- 跟踪集群节点状态,保证新加入的节点自动创建对应的Pod
+- 跟踪集群节点状态,保证删除对节点删除对应的Pod
+- 跟踪Pod 状态,保证每个Pod 处于运行状态
+
+DaemonSet 适用场景:
+
+- 集群存储进程: glusterd,Ceph
+- 日志收集进程:fluentd,logstash
+- 需要在每个节点运行的监控收集器
+
+
+
+查看DaemonSet 
+
+```
+kubectl get ds
+```
+
+更新DaemonSet
+
+- RollingUpdate:默认更新策略,当更新模版后,老旧的Pod 模版会被删除,然后创建新的Pod,可以配合健康检查做滚动更新
+- OnDelete:更新DaemonSet 模版后,只有手动的删除对应的Pod,此节点的Pod 才会更新.
+
+
+
+**DaemonSet -管理模式**
+
+- DaemonSet Controller 负责根据配置创建Pod
+- DaemonSet Controller 跟踪Job状态,根据配置及时重试或创建Pod
+- DaemonSet Controller 会自动添加affinity&label 跟踪对应的Pod,根据配置在每个节点或者适合的节点创建Pod
+
+
+
+**DaemonSet-控制器**
+
+
+
+#### 8.应用配置管理
+
+- **ConfigMap**
+
+- **Secret**
+
+- **ServiceAccount**
+
+  解决集群身份认证问题
+
+- **Resource**
+
+  容器资源配置管理
+
+- **SecurityContext**
+
+- **InitContainer**
 
 [参考资料]
 
