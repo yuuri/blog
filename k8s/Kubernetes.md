@@ -220,6 +220,15 @@ kubectl get ds
 
 - **InitContainer**
 
+
+
+#### 9.应用存储和持久化卷-核心知识
+
+- Volume
+  - Persistent Volumes
+  - Persistent Volume Claim
+  - Static Volume Provisioning
+
 [参考资料]
 
 [1].https://edu.aliyun.com/roadmap/cloudnative
