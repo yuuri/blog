@@ -222,12 +222,25 @@ kubectl get ds
 
 
 
-#### 9.应用存储和持久化卷-核心知识
+#### 9.应用存储和持久化数据卷-核心知识
 
 - Volume
   - Persistent Volumes
   - Persistent Volume Claim
   - Static Volume Provisioning
+
+
+
+#### 10.应用存储和持久化数据卷-存储快照与拓扑调度
+
+- Kubernetes CSI Snapshot Controller
+- 存储拓扑调度问题 
+  - Local PV 只能在指定的Node 上被Pod 使用 (PV 有位置限制[.spec.nodeAffinity], 当Pod 从原来Node1 迁移到Node2 时就会产生问题) 
+  - Pod 与PV 不在同一可用区(Zone)
+
+- 处理流程
+  - Volume Snapshot 处理流程
+  - Volume Topology-aware Scheduling 处理流程
 
 [参考资料]
 
