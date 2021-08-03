@@ -397,6 +397,78 @@ kubectl get ds
 
     对端(通过name/PodSelector)、IP端(idBlock)、协议(Protocol)、端口(Port)
 
+- Pod 网络的基本要素
+  - Pod 有独立的网络空间和唯一地址
+  - Pod 与Pod ，Node，外界网络互相连通
+- Network Policy
+  - 控制Pod 到Pod，Node，外界网络的访问限制
+
+#### 14.Kubernetes Service
+
+- Kubernetes 已用如何相互调用
+
+  - Pod 生命周期短暂，IP随时发生变化
+  - Deployment等Pod组需要统一访问入口和做负载均衡
+  - 应用在不同环境部署时保持同样的部署拓扑和访问方式
+
+- 创建和查看service
+
+  - 创建service
+
+    ```
+    kubectl apply -f service.yml
+    # 或者
+    kubectl creared -f service.yml
+    ```
+
+  - 查看service
+
+    ```
+    kubectl describe service my-service
+    ```
+
+- 集群内访问Service
+
+  - 通过service 的虚拟ip进行访问
+  - 直接访问服务名
+  - 通过环境变量进行访问
+
+- Headless Service
+
+  创建service时可以指定clusterIP:None，即不会分配IP，Pod可以通过service_name 以DNS的方式解析到所有后端Pod 的IP地址，通过DNS的A记录方式会解析到所有后端的Pod的地址，由客户端选择一个后端的Ip地址，这个A记录会随着Pod的生命周期变化，返回A记录列表也发生变化，要求客户端应用要从DNS返回的A纪录列表中选择一个合适的IP进行访问。
+
+![img](Kubernetes.assets/1112215e2648446658.png)
+
+- 集群外部暴漏service
+
+  - NodePort
+
+    NodePort是在集群的node（集群节点的宿主机）上暴漏节点的一个端口，当有请求访问时节点接收到请求后会把请求转发到对应的虚拟IP地址上
+
+  - Loadbalancer
+
+  LoadBalancer 类型是在NodePort上又添加了一层，NodePort是集群节点上的端口，LoadBalancer是在所有节点之上添加了一个负载均衡。这个负载均衡会提供一个统一的入口，把接触到的流量负载均衡到每一个集群节点的Node Pod上，然后Node Pod 在转化成ClusterIP 去访问到实际的Pod 上。
+
+
+
+####  从0开始创作云原生应用
+
+- Helm 与Helm Chart
+  - 编写程序
+  - 填写dockerfile 打包镜像
+  - 创建helm 空白应用
+  - Chart 配置
+  - Temple 配置
+  - 校验与打包
+  - 安装测试
+  - 参数覆盖
+  - 修改Notes
+  - 升级版本
+
+
+
+
+
 [参考资料]
 
 [1].https://edu.aliyun.com/roadmap/cloudnative
