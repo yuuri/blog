@@ -313,6 +313,90 @@ kubectl get ds
 
 
 
+#### 12.可观测性-监控与日志
+
+- 监控
+  - 资源监控
+  - 性能监控
+  - 安全监控
+  - 性能监控
+
+- 日志
+  - 主机内核日志
+  - runtime日志
+  - 核心组件日志
+  - 部署应用日志
+- 日志采集
+  - 宿主机文件
+  - 容器内文件
+  - 容器标准/错误输出
+- fluentd 日志采集方案
+
+
+
+#### 13.Kubernetes 网络概念与策略
+
+- 基本网络模型
+
+  - 三个基本条件
+    - Pod 与Pod 之间直接通信,无需显式使用NAT
+    - Node 与Pod 之间直接通信,无需显式使用NAT
+    - Pod 可见的IP地址确为其他Pod 与其通信时所用,无需显式转换
+  - 四大目标
+    - 容器与容器之间对通信
+    - Pod 与Pod 之间的通信
+    - Pod 与Service 之间的通信
+    - 外部世界与Service 的通信
+
+- Network Namespace (Netns)
+
+  - 实现内核网络虚拟化的基础,创建了隔离的网络空间
+  - 独立的附属网络设备 (lo、veth等虚拟设备或者物理网卡)
+  - 独立的协议栈,IP地址和路由表
+  - iptables规则
+  - ipvs等
+
+- Pod 与Netns关系
+
+  - 每个Pod 拥有独立的Netns空间,Pod 内的Container 共享该空间,通过共享等Pod-IP对外提供服务
+  - 宿主机上还有Root Netns,可以看作一个特殊的容器空间
+
+- 常见的网络实现方案
+
+  - Flannel,最为普遍的实现,提供多种网络backed实现,覆盖多种场景
+  - Calico,采用BGP提供网络直连
+  - Canal(Flannel for Network + Calico for firewalling) ,嫁接型创新项目
+  - Cilium,基于eBPF + XDP的高性能Overlay网络方案
+  - Kube-route,同样采用BGP提供网络直连,集成机遇LVS的负载均衡能力
+  - Romana,采用BGP or OSPF提供网络直连能力的方案
+  - WeaveNet,采用UDP封装实现L2 Overlay,支持用户态(慢,可加密)/内核态(快,不能加密)两种实现
+
+- Network Policy
+
+  基于策略的网络控制,用于隔离应用并减少攻击面.使用标签选择器模拟传统的分段网络,并通过策略控制他们的之间的流量以及外部流量
+
+  使用之前要注意:
+
+  - api server 开启extensions/v1beat1/networkpolicies
+
+  - 网络插件要支持Network Policy,如Calico、Romana、WeaveNet、trireme等
+
+  - 配置实例
+
+    通过标签选择器(包括namespaceSelector 和PodSelector)来控制Pod流量
+
+    - 控制对象 
+
+    通过spec字段,podSelector筛选
+
+    - 流方向
+
+    Ingress(入Pod 流量) + from、Egress(出Pod 流量) + to
+
+    - 流特征
+
+    对端(通过name/PodSelector)、IP端(idBlock)、协议(Protocol)、端口(Port)
+
 [参考资料]
 
 [1].https://edu.aliyun.com/roadmap/cloudnative
