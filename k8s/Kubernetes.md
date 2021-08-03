@@ -242,9 +242,82 @@ kubectl get ds
   - Volume Snapshot 处理流程
   - Volume Topology-aware Scheduling 处理流程
 
+
+#### 11.可观测性
+
+- Liveness 
+
+- Readiness
+
+- 应用健康诊断方式
+
+  - 探测方式
+
+    - httpGet .
+
+      发送Http请求,返回结果在200-399之间状态码则表明容器健康
+
+    - Exec. 
+
+      通过命令来检查服务是否正常,命令返回0则表示容器健康
+
+    - tcpSocket
+
+      通过容器的IP 和Port执行TCP检查,如果能建立起TCP连接则表示容器健康
+
+  - 诊断结果
+
+    - Success. Container通过了检查
+    - Failed.     Container未通过检查
+    - Unknown. 未能执行检查,不做任何操作
+
+  - 重启策略
+
+    - Always 总是重启
+    - OnFailure 失败才重启
+    - Never 从不重启
+
+- 应用健康故障排除
+
+  - 通过describe 查看状态,通过状态判断排查方向
+  - 查看对象event事件,查看更详细的信息
+  - 查看pod 日志确定应用自身情况
+
+- 常见应用异常
+
+  - Pod停留在Pending
+
+  Pending 表示调度器没有介入,可以通过`kubectl describe pod`,查看时间排查问题,通常和资源使用相关.
+
+  - Pod 停留在Waiting
+
+  一般表示Pod 的镜像没有正常的拉取,通常可能和私有镜像拉取,镜像地址不存在,镜像公网拉取相关.
+
+  - Pod 不断被拉起且可以看到crashing
+
+  通常表示Pod 已经完成调度并启动,但是启动失败,通常是由配置、权限造成,需要查看Pod 日志.
+
+  - Pod处于running 但是没有正常工作
+
+  通常是由于部分认证字段拼写错误造成,可以通过校验部署来排查, `kubectl apply -validate -f pod.yaml`
+
+  - Service 无法正常工作
+
+  排除网络自身的问题之外,最有可能的问题是label配置有问题,可以通过查看endpoint 的方式进行检查.
+
+- 启用远程应用调试
+
+  - 代理本地应用到集群 - Telepresence
+  - 代理远程应用到本地 - Port-Forward
+  - 开源调试工具 - kubectl-debug
+
+
+
 [参考资料]
 
 [1].https://edu.aliyun.com/roadmap/cloudnative
 
+[2].https://time.geekbang.org/column/intro/116
 
+[3].https://portworx.com/ (#1 Kubernetes Storage Platform)
 
