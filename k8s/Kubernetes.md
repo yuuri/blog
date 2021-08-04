@@ -469,6 +469,58 @@ kubectl get ds
 
 
 
+#### 15.深入剖析Linux 容器
+
+- namespace
+  - mount
+  - uts
+  - pid
+  - network
+  - user
+  - ipc
+  - cgroup
+
+- unshare 
+
+- cgroups
+
+  - 两种驱动
+    - systemd cgroup driver
+    - cgroupfs cgroup drive
+  - 容器中常用的cgroup
+    - cpu cpuset cpuacct
+    - memory
+    - device 
+    - freezer
+    - blkio
+    - pid
+
+  - 不常用的cgroup(针对docker来讲)
+    - net_cls
+    - net_prio
+    - hugetlb
+    - perf_event
+    - rdma
+
+- 容器镜像
+
+  - docker images:
+    - 基于联合文件系统
+    - 不同的层可以被其他镜像复用
+    - 容器的可写层可以作为镜像新的一层
+  - 以overlay为例
+
+- 容器引擎
+
+  - Containerd 容器架构
+  - shim v1/v2
+  - OCI
+  - Containerd 容器架构-容器流程示例
+
+
+
+
+
 [参考资料]
 
 [1].https://edu.aliyun.com/roadmap/cloudnative
@@ -477,3 +529,4 @@ kubectl get ds
 
 [3].https://portworx.com/ (#1 Kubernetes Storage Platform)
 
+[4].https://blog.frognew.com/post.html
