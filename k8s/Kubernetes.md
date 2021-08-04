@@ -521,6 +521,88 @@ kubectl get ds
 
 
 
+#### 16.深入理解etcd:基本原理
+
+- 架构及内部机制解析
+
+  - etcd 数据版本号机制
+
+  - etcd mvcc & streaming watch
+
+  - mini-transactions
+
+  - lease 的概念与用法
+
+- 使用场景
+
+  - 元数据存储-- Kubernetes
+  - Service Discovery(Naming Service)
+    - 资源注册
+    - 存活性检测
+    - API gateway 无状态
+    - 支持上万进程的规模
+  - Dsitributed Coordination:leader election
+  - 分布式系统并发控制
+
+
+
+#### 17.深入理解etcd:etcd性能优化实践
+
+- 理解etcd 性能
+  - Raft
+    - 网络IO节点之间的RTT/带宽
+    - WAL 受到磁盘IO 写入延迟的影响
+  - Storage
+    - 磁盘IO fdatasync延迟
+    - 索引层锁的block
+    - boltdbTx的锁
+    - boltdb本身的性能
+  - 其他
+    - 内核参数
+    - grpc api层延迟
+
+
+
+- etcd性能优化-服务端
+
+  - 硬件
+
+    - CPU、Memory
+    - 磁盘选择SSD
+    - 网络带宽优先级
+    - 独占部署,减少其他程序运行时干扰
+
+    https://etcd.io/docs/v3.5/op-guide/hardware/
+
+    软件
+
+    - 内存索引层
+
+    提升etcd内存索引性能,优化内存锁的使用减少等待时间(https://github.com/etcd-io/etcd/pull/9511)
+
+    - lease 规模使用
+
+    优化lease revoke和过期失效的算法,解决lease 规模性的问题 (https://github.com/etcd-io/etcd/pull/9418)
+
+    - 后端boltdb 使用优化
+
+    后端batch size limit/interval,可根据不同的硬件和工作负载配置(之前为固定保守值)
+
+    (https://github.com/etcd-io/etcd/commit/3faed211e535729a9dc36198a8aab8799099d0f3)
+
+    - 完全并发读 优化调用boltdb tx 读写锁使用,提升读性能
+
+      (https://github.com/etcd-io/etcd/pull/10523)
+
+    - 基于segregated hashmap 的etcd 内部存储freelist分配回收算法
+
+- etcd性能优化-客户端
+  - put 时避免大value,精简再精简,例如k8s crd的使用
+  - 避免创建频繁变化的key/values,例如k8s下node数据上传
+  - 避免创建大量lease,尽量选择复用,例如k8s下event 数据管理
+
+
+
 [参考资料]
 
 [1].https://edu.aliyun.com/roadmap/cloudnative
