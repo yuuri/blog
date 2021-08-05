@@ -401,6 +401,7 @@ kubectl get ds
   - Pod 有独立的网络空间和唯一地址
   - Pod 与Pod ，Node，外界网络互相连通
 - Network Policy
+  
   - 控制Pod 到Pod，Node，外界网络的访问限制
 
 #### 14.Kubernetes Service
@@ -600,6 +601,84 @@ kubectl get ds
   - put 时避免大value,精简再精简,例如k8s crd的使用
   - 避免创建频繁变化的key/values,例如k8s下node数据上传
   - 避免创建大量lease,尽量选择复用,例如k8s下event 数据管理
+
+
+
+#### 18.Kubernetes 调度和资源管理
+
+- Kubernetes 调度过程
+
+- Kubernetes 基础调度能力
+
+  - Pod Qos 配置
+  - 配置资源Quota
+  - Pod 亲和力调度
+    - Pod 亲和调度  PodAffinity
+      - 必须和某些Pod 一起调度   requireDuringSchedulingIgnoreDuringExceution
+      - 优先和某些Pod 一起调度   preferredDuringSchedulingIgnoreDuringExceution
+    - Pod反亲和调度 PodAntiAffinity
+      - 禁止和某些Pod 一起调度   requireDuringSchedulingIgnoreDuringExceution
+      - 优先不和某些Pod 一起调度   preferredDuringSchedulingIgnoreDuringExceution
+    - Operator
+      - In/Not/Exists/DoesNotExist
+  - 满足Pod 与 Node关系调度
+    - NodeSelector
+      - 必须调度到带了某些标签的Node
+      - Map[String]string
+    - NodeAffinity
+      - 必须调度到某些Node上   requireDuringSchedulingIgnoreDuringExceution
+      - 优先调度到某些Node上  preferredDuringSchedulingIgnoreDuringExceution
+      - Operator
+        - In/Not/Exists/DoesNotExist/Gt/Lt
+    - Node 标记/容忍
+      - Node Tains
+        - 一个Node 可以有多个Taints
+        - Effect （不能为空）
+          - NoSchedule  - 只是禁止新Pod 调度
+          - PreferNoSchedule - 尽量不调度到这台
+          - NoExecute - 会Evict没有对应toleration的Pods， 并且也不会调度新的上来
+      - Pod Tolerations
+        - 一个Pod 可以有多个Tolerations
+        - Effect 可以为空，匹配所有
+          - 取值和Taints的Effect 一致
+        - Operator
+          - Exists/Equal
+
+- Kubernetes 高级调度能力
+
+  - 基础调度策略：
+
+    - 先到先得策略（FIFO） - 简单、公平、上手快
+    - 优先级策略（Priority） - 符合日常公司业务特点
+
+  - 优先级调度和抢占
+
+    - Priority
+
+      - 创建PriorityClass
+      - 为各个Pod 配置不同PriorityClassName
+      - 一些内置优先级
+        - 内置默认优先级 DefaultPriorityWhenNoDefaultClassExists = 0
+        - 用户可配置的最大优先级限制 HighestUserDefaultPriority = 100 0000 0000 (10亿)
+        - 系统级别优先级限制 SystemCriticalPriority = 200 0000 0000(20亿)
+        - 内置系统级别优先级
+          - system-cluster-critical
+          - system-node-critical
+      - 优先级调度过程
+
+    - Preemption
+
+      - 优先级抢占过程
+
+      - 优先级抢占策略
+
+        - 优先选择打破PDB 最少的节点
+        - 其次选择待抢占Pods 中最大优先级最小的节点
+        - 再次选择待抢占Pods 优先级加和最小的节点
+        - 接下带选择待抢占Pods 数目最小的节点
+        - 最后选择拥有最晚启动的Pod 的节点
+
+        在上面五步串行策略后，会选择一个合适的节点，然后对节点上待抢占的Pod 进行delete 这样就完成了一次待抢占的过程。
 
 
 
