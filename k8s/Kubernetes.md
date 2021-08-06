@@ -682,6 +682,132 @@ kubectl get ds
 
 
 
+
+
+#### 19.调度器的调度流程和算法介绍
+
+- 调度流程
+
+  ![img](Kubernetes.assets/153604468609103687.png)
+
+
+
+- 调度算法
+  - Predicates
+  - Priorities
+
+- 如何配置调度器
+  - 如何启动一个调度器
+    - 默认配置(--write-config-to)
+    - 配置文件(--config)
+  - 配置文件解释
+  - algorithmSource
+    - Provider
+    - file
+    - configMap
+- 如何扩展调度器
+  - Scheduler Extender
+    - 功能
+      - 不改变原先调度的代码,直接在调度外起服务作为插件给调度器调用(类似webhook)
+      - 支持preficate,preempt,priority,bind的注入
+      - 一种ExtendResource,Bind 只能一个extender
+    - 配置文件解释
+    - 案例
+      - 申请GPU现存,具体卡的显存只有Extender知道,所以增加Extender的Filter
+  - Scheduler Framework
+    - 扩展点用途
+    - 并发模型
+    - 自定义Plugin
+      - vendor
+      - fork
+
+
+
+#### 20.GPU管理和Device Plugin工作机制
+
+- 需求来源
+
+- GPU的容器化
+
+  - 构建支持GPU容器镜像
+    - 直接使用官方深度学习容器镜像
+    - 基于NVIDIA的CUDA镜像基础构建
+  - 利用Docker 将该容器镜像运行起来,并把GPU设备和依赖库映射到容器中
+  - GPU容器镜像原理
+
+- K8s的GPU管理
+
+  - 部署GPU Kubernetes
+
+    - 安装NVIDIA 驱动
+
+    ```bash
+    sudo yum install -y gcc kernel-device-$(uname -r)
+    sudo /bin/sh ./NVIDIA-Linux-x86_64*.run
+    ```
+
+    - 安装NVIDIA Docker2
+
+    ```bash
+    sudo yum install nvidia-docker2
+    sudo pkil -SIGHUP dockerd
+    ```
+
+    - 部署NVIDIA Device Plugin
+
+    ```bash
+    kubectl create -f nvidia-device-plugin.yml
+    ```
+
+    - 验证部署GPU Kubernetes 结果
+
+    ```bash
+    kubectl describe node-gpu-node-01
+    ```
+
+    - 查看运行结果
+
+    ```
+    $ kubectl apply -f groupod.yml
+    pod/gpu created
+    
+    $kubectl exec -it gpu --nvidia-smi
+    ```
+
+  
+
+- 工作原理
+
+  - 通过扩展的方式管理GPU 资源
+    - Extended Resource
+    - Device Plugin Framework
+
+  - Extended Resource 的上报
+
+  - Device Plugin 的工作机制
+
+    - 资源上报和监控
+
+    ![img](Kubernetes.assets/155545197a96584389.png)
+
+    - Pod的调度和运行
+
+    ![img](Kubernetes.assets/15562042e2a4744077.png)
+
+  - Device Plugin 机制的缺陷
+
+    - 设备调度发生在Kubelet 层面,缺乏全局调度视角
+    - 资源上报信息有限导致调度精细度不足
+    - 调度策略简单,并且无法配置,无法应对复杂场景
+
+  - 社区的异构资源调度方案
+
+  ![img](Kubernetes.assets/155701d812b5865988.png)
+
+
+
+
+
 [参考资料]
 
 [1].https://edu.aliyun.com/roadmap/cloudnative
