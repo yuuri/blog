@@ -808,6 +808,19 @@ kubectl get ds
 
 
 
+#### 21.Kubernetes 存储架构及插件使用
+
+- Kubernetes 存储体系架构
+  - PV Controller:负责PV/PVC的绑定,生命周期的管理,并根据需求进行数据卷的Provision/Delete操作;
+  - AD Controller:负责存储设备的Attach/Detach操作,将设备挂载到目标节点;
+  - Volume Manager:管理卷的Mount/Unmount操作,卷设备的格式化等;
+  - Volume Plugins:扩展各种存储类型的卷管理能力,实现第三方存储的各种操作能力与Kubernetes系统结合;
+  - Scheduler:实现Pod 调度能力,存储相关的调度器实现了针对存储卷配置进行调度
+- FlexVolume介绍及使用
+- CSI介绍及使用
+
+
+
 [参考资料]
 
 [1].https://edu.aliyun.com/roadmap/cloudnative
