@@ -252,5 +252,39 @@ https://mikechengwei.github.io/2020/06/03/cgroup%E5%8E%9F%E7%90%86/ (Linux Cgrou
 
 
 
+-- other
 
+https://www.altmetric.com/ ()
+
+https://zh.gluon.ai/ (Deep Learning)
+
+https://dahuasky.wordpress.com/ （Computer Vision)
+
+https://coolshell.cn/ (Computer Programming)
+
+https://xavierskip.com/(Cool)
+
+http://ns.codingnow.com/ (C++)
+
+https://www.byvoid.com/blog
+
+https://wdxtub.com/
+
+https://blog.csdn.net/leixiaohua1020 (FFmpeg)
+
+https://hllvm-group.iteye.com/ (JVM)
+
+https://rednaxelafx.iteye.com/ (JVM)
+
+https://www.tianfateng.cn/ （English）
+
+https://www.sports-reference.com/ (Sports)
+
+http://mohu.org/info/symbols/symbols.htm (LaTex)
+
+https://blog.csdn.net/guodongxiaren/article/details/88920485 (Redis)
+
+https://bellard.org/ (Fabrice Bellard)
+
+https://nndl.github.io/ (deep learning )
 

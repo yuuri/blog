@@ -821,6 +821,51 @@ kubectl get ds
 
 
 
+
+
+#### 22.有状态应用编排StatefulSet
+
+	- StatefulSet:面向
+
+
+
+
+
+#### 23.Kubernetes API 编程范式
+
+- Custom Resource Definition(CRD)
+
+
+
+
+
+#### 24.Kubernetes API编程利器:Operator 和Operator Framework
+
+- 概述
+  - CRD
+  - CR
+  - webhook
+  - 工作队列
+  - controller
+  - operator
+- Operator Framwork 实战
+  - 初始化
+  - 创建API
+  - 填充CRD
+  - 生成webhook 框架
+  - 填充webhook
+  - 填充controller
+- 工作流程
+  - 用户创建SidecarSet
+  - webhook受到Sidecarset,缺省值配置和配置项校验
+  - 用户创建pod
+  - webhook拿回对应的Sidecarset,注入到Pod中
+  - controller 实时检测Pod信息,并更新Sidecarset状态
+
+
+
+
+
 [参考资料]
 
 [1].https://edu.aliyun.com/roadmap/cloudnative
