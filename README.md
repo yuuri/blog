@@ -57,6 +57,10 @@ Record my think...
 
 K8s/kubernetes [Kubernetes](k8s/Kubernetes.md)
 
+-----
+
+202402/20240201 [Mac 自带翻译由于代理导致不可用问题](202402/20240201.md)
+
 
 
 
