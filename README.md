@@ -57,6 +57,8 @@ Record my think...
 
 202410/20241020 [pg常用命令](202410/20241020.md)
 
+202410/20241022  [mysql monitor metrics](202410/20241022.md)
+
 K8s/kubernetes [Kubernetes](k8s/Kubernetes.md)
 
 -----
